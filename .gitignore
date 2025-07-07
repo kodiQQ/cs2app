@@ -1,0 +1,52 @@
+# -----------------------
+# Python / Django
+# -----------------------
+*.py[cod]
+__pycache__/
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# wirtualne środowisko
+venv/
+caseClicker-backend/venv/
+
+# Django secret keys, settings itp.
+*.env
+
+# logi, bazy sqlite (jeśli używasz)
+*.log
+db.sqlite3
+
+# migracje (jeśli nie chcesz śledzić)
+# core/migrations/__pycache__/
+# core/migrations/*.py
+
+# -----------------------
+# IDE / Editor
+# -----------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# -----------------------
+# System plików
+# -----------------------
+.DS_Store
+Thumbs.db
+
+# -----------------------
+# Docker
+# -----------------------
+# cache buildujące
+**/.dockerignore
+**/Dockerfile~
+# tymczasowe kontenery
+docker-compose.override.yml
+
+# obrazy/wolumeny (jeśli przypadkiem w repo weszły)
+volumes/
+*.tar
