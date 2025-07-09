@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'core',
     'cases',
+    'cases.apps.CasesConfig'
 ]
 
 MIDDLEWARE = [
