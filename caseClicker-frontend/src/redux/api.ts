@@ -1,7 +1,7 @@
 import type {Dispatch} from "redux";
 import {LOGIN_SUCCESS, LOGOUT_SUCCESS} from "./authService/ActionType.ts";
 
-export const BASE_API_URL = "http://localhost:8080/api";
+export const BASE_API_URL = "http://localhost:8000/api";
 
 type FetchResult = Record<string, any> | string | { error: true; message: string };
 

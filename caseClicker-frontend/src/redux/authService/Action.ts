@@ -23,7 +23,7 @@ interface AuthPayload {
 }
 
 export const registerAction = (data: AuthPayload) => async (dispatch: Dispatch) => {
-    await dispatchAction(dispatch, REGISTER_REQUEST, REGISTER_SUCCESS, REGISTER_ERROR, "/auth/register", {
+    await dispatchAction(dispatch, REGISTER_REQUEST, REGISTER_SUCCESS, REGISTER_ERROR, "/auth/register/", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -33,9 +33,9 @@ export const registerAction = (data: AuthPayload) => async (dispatch: Dispatch) 
 };
 
 export const loginAction = (data: AuthPayload) => async (dispatch: Dispatch) => {
-    await dispatchAction(dispatch, LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_ERROR, "/auth/login", {
+    await dispatchAction(dispatch, LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_ERROR, "/auth/login/", {
         method: "POST",
-        body: JSON.stringify(data),
+        body: JSON.stringify({ username: data.email, password: data.password }),
         headers: {
             "Content-Type": "application/json",
         },
@@ -50,7 +50,7 @@ export const logoutAction = () => async (dispatch: Dispatch) => {
 };
 
 export const currentUser = () => async (dispatch: Dispatch) => {
-    await dispatchAction(dispatch, REQUEST_USER, REQUEST_USER_SUCCESS, REQUEST_USER_ERROR, "/auth/check", {
+    await dispatchAction(dispatch, REQUEST_USER, REQUEST_USER_SUCCESS, REQUEST_USER_ERROR, "/auth/user/", {
         method: "GET",
         credentials: "include",
     });

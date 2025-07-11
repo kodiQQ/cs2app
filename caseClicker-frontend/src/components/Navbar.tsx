@@ -35,7 +35,6 @@ export function Navbar(): JSX.Element {
     const toggleMenu = () => setMenuOpen(prev => !prev);
 
     const handleLogout = () => {
-        // @ts-ignore
         void dispatch(logoutAction())
             .then(() => {
                 navigate("/login");
@@ -106,9 +105,6 @@ export function Navbar(): JSX.Element {
                                 {reqUser.firstName} {reqUser.lastName}
                             </p>
                             <div className="flex gap-2">
-                                {reqUser.roles.map(({ name }, idx) => (
-                                    <span key={idx} className="text-xs text-amber-300">{name}</span>
-                                ))}
                             </div>
                             <button
                                 onClick={handleLogout}
@@ -136,9 +132,6 @@ export function Navbar(): JSX.Element {
                                     {reqUser.firstName} {reqUser.lastName}
                                 </p>
                                 <div className="flex gap-2">
-                                    {reqUser.roles.map(({ name }, idx) => (
-                                        <span key={idx} className="text-xs text-amber-300">{name}</span>
-                                    ))}
                                 </div>
                             </div>
                             <button onClick={toggleMenu} className="text-white text-xl focus:outline-none">
