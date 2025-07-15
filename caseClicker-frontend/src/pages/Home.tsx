@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAppDispatch, useAppSelector } from '../app/hooks';
+import { fetchCases } from '../features/cases/casesThunks';
+import { CaseCard } from '../components/CaseCard';
+import { CaseModal } from '../components/CaseModal';
 
 export const Home: React.FC = () => {
+    const dispatch = useAppDispatch();
+    const { list, loading } = useAppSelector(state => state.cases);
+    const [openId, setOpenId] = useState<number | null>(null);
+
+    useEffect(() => { dispatch(fetchCases()); }, [dispatch]);
+
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 c">
-            <h1 className="text-3xl font-bold mb-2">Welcome to the Home Page</h1>
-            <p className="text-gray-700">
-                This is a simple <code>Home</code> component written in TypeScript and React.
-            </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {loading ? <p>Ładowanie...</p> : list.map(c => (
+                <CaseCard key={c.id} {...c} onOpen={id => setOpenId(id)} />
+            ))}
+            {openId && <CaseModal caseId={openId} onClose={() => setOpenId(null)} />}
         </div>
     );
 };
