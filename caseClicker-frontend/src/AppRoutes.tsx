@@ -7,6 +7,7 @@ import {Layout} from "./layout/Layout.tsx";
 import {Home} from "./pages/Home.tsx";
 import LoginPage from "./pages/LoginPage.tsx";
 import RegisterPage from "./pages/RegisterPage.tsx";
+import InventoryPage from "./pages/InventoryPage.tsx";
 
 
 const AppRoutes: React.FC = () => {
@@ -22,7 +23,7 @@ const AppRoutes: React.FC = () => {
 
                 <Route element={<Layout />}>
                     <Route path="/home" element={<Home />} />
-
+                    <Route path="/inventory" element={<InventoryPage />} />
                 </Route>
             </Routes>
 

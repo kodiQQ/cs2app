@@ -2,12 +2,13 @@ import { applyMiddleware, combineReducers, legacy_createStore } from "redux"
 import { thunk } from "redux-thunk"
 import {authReducer} from "./authService/Reducer.ts";
 import {casesReducer} from "./casesService/Reducer.ts";
+import {inventoryReducer} from "./inventoryService/Reducer.ts";
 
 const rootReducer = combineReducers({
     auth: authReducer,
     cases: casesReducer,
     // wallet: walletReducer,
-    // inventory: inventoryReducer,
+    inventory: inventoryReducer,
     // history: historyReducer,
 })
 
