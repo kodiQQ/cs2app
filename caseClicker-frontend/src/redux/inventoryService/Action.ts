@@ -1,10 +1,11 @@
-import { Dispatch } from 'redux';
-import { fetchWithAuth } from '../../api/apiClient';
+import type {Dispatch} from 'redux';
+
 import {
     FETCH_INVENTORY_REQUEST,
     FETCH_INVENTORY_SUCCESS,
     FETCH_INVENTORY_ERROR,
 } from './ActionType';
+import {fetchWithAuth} from "../api.ts";
 
 interface InventoryItem {
     id: number;

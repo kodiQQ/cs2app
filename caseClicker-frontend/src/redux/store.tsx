@@ -3,11 +3,12 @@ import { thunk } from "redux-thunk"
 import {authReducer} from "./authService/Reducer.ts";
 import {casesReducer} from "./casesService/Reducer.ts";
 import {inventoryReducer} from "./inventoryService/Reducer.ts";
+import {walletReducer} from "./walletService/Reducer.ts";
 
 const rootReducer = combineReducers({
     auth: authReducer,
     cases: casesReducer,
-    // wallet: walletReducer,
+    wallet: walletReducer,
     inventory: inventoryReducer,
     // history: historyReducer,
 })
