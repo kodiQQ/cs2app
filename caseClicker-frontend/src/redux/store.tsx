@@ -4,13 +4,14 @@ import {authReducer} from "./authService/Reducer.ts";
 import {casesReducer} from "./casesService/Reducer.ts";
 import {inventoryReducer} from "./inventoryService/Reducer.ts";
 import {walletReducer} from "./walletService/Reducer.ts";
+import {historyReducer} from "./historyService/Reducer.ts";
 
 const rootReducer = combineReducers({
     auth: authReducer,
     cases: casesReducer,
     wallet: walletReducer,
     inventory: inventoryReducer,
-    // history: historyReducer,
+    history: historyReducer,
 })
 
 export const store = legacy_createStore(rootReducer, applyMiddleware(thunk));

@@ -1,0 +1,3 @@
+export const FETCH_HISTORY_REQUEST = 'FETCH_HISTORY_REQUEST' as const;
+export const FETCH_HISTORY_SUCCESS = 'FETCH_HISTORY_SUCCESS' as const;
+export const FETCH_HISTORY_ERROR   = 'FETCH_HISTORY_ERROR'   as const;

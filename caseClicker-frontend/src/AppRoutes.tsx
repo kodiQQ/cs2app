@@ -9,7 +9,7 @@ import LoginPage from "./pages/LoginPage.tsx";
 import RegisterPage from "./pages/RegisterPage.tsx";
 import InventoryPage from "./pages/InventoryPage.tsx";
 import WalletPage from "./pages/WalletPage.tsx";
-
+import HistoryPage from "./pages/HistoryPage.tsx";
 
 const AppRoutes: React.FC = () => {
     return (
@@ -26,6 +26,7 @@ const AppRoutes: React.FC = () => {
                     <Route path="/home" element={<Home />} />
                     <Route path="/inventory" element={<InventoryPage />} />
                     <Route path="/wallet" element={<WalletPage />} />
+                    <Route path="/history" element={<HistoryPage />} />
                 </Route>
             </Routes>
 
